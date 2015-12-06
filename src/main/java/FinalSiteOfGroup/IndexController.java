@@ -3,6 +3,8 @@ package FinalSiteOfGroup;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -26,7 +28,7 @@ public class IndexController {
 	  private UsersService usersService;
 
 	  @RequestMapping("/")
-	  public String index(Model model) { return "index"; }
+	  public String index(Model model) { return "Home"; }
 
 	  @RequestMapping("/About us")
 	  public String home(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
@@ -42,6 +44,13 @@ public class IndexController {
 	  public String createPost(@RequestParam("text") String postText) {
 	    postsService.addPost(postText);
 	    return "redirect:About us";
+	  }
+	  
+	  @RequestMapping(value = "/remove_post", method = RequestMethod.GET)
+	  public String removePost(@RequestParam("post_id") Long postId,HttpServletRequest request) {
+	    postsService.deletePost(postId);
+	    String referer=request.getHeader("Referer");
+	    return "redirect:"+referer;
 	  }
 
 	  @RequestMapping(value = "/register", method = RequestMethod.POST)

@@ -31,4 +31,10 @@ public class PostsService {
 	    User currentUser = usersRepo.findOne(1L);
 	    postsRepo.save(new Post(currentUser, text, new Date()));
 	  }
+	  
+	  public void deletePost(Long id) {
+		    //User currentUser = usersRepo.findOne(user.);
+		    postsRepo.delete(id); //(new Post(currentUser, text, new Date()));
+		  }
+	  
 }
