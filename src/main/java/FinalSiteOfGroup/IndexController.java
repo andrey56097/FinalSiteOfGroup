@@ -1,10 +1,12 @@
 package FinalSiteOfGroup;
 
 
+import java.io.Console;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.neo4j.cypher.internal.compiler.v2_1.planner.logical.steps.outerJoin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.fasterxml.jackson.annotation.JsonFormat.Value;
 
 import FinalSiteOfGroup.models.Post;
 import FinalSiteOfGroup.services.PostsService;
@@ -33,10 +37,22 @@ public class IndexController {
 	  @RequestMapping("/About us")
 	  public String home(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
 	    Page<Post> postsPage = postsService.getPosts(page, 5);
+	    
+	    int realPage;
+	    if (postsPage.getNumberOfElements()==0 && page!=1)
+	    {
+	    	realPage=page-1;
+	    	postsPage = postsService.getPosts(page-1, 5);
+	    }
+	    else realPage=page;
+	    
 	    model.addAttribute("posts", postsPage.getContent());
 	    model.addAttribute("users", usersService.getSubscribeRecommendations());
 	    model.addAttribute("pagesCount", postsPage.getTotalPages());
-	    model.addAttribute("currentPage", page);
+	    System.out.println("elements_count:"+postsPage.getNumberOfElements());
+	  
+	    model.addAttribute("currentPage",realPage);
+	    
 	    return "About us";
 	  }
 
