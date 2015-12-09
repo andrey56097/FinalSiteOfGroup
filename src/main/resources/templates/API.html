@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8"/>
+
+		<title> Web Page</title>
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+		<link href="css/style.css" rel="stylesheet"/>
+        <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+        
+        <script type="text/javascript" src="js/code.js"></script>
+        
+        
+         <script>
+        function toTextContainer(data) {
+            $('#text').text(data);
+        }
+        function toHtmlContainer(data) {
+            $('#html').text(data);
+        }
+        function toXmlContainer(data, status, xhr) {
+            $('#xml').text(xhr.responseText);
+        }
+        function toJsonContainer(data, status, xhr) {
+            $('#json').text(xhr.responseText);
+        }
+    </script>
+    </head>
+
+    <body>
+
+    <div class="page-header">
+        <div class="name">
+                 <a href="About us.html"><img src="images/imageHeader.jpg" title="Отзывчивое изображение в Bootstrap" width="1315" height="300" /></a>
+	               
+	    </div> 
+	</div>
+
+		<ol class="breadcrumb">
+		  <li><a href="Home.html">Домашня сторінка</a></li>
+		  <li><a href="Cathalogs.html">Каталог</a></li>
+		  <li><a href="About us.html">Про нас</a></li>
+		  <li><a href="Contacts.html">Наші контакти</a></li>
+		  <li><a href="API.html">API</a></li>
+		</ol>
+
+				<p align="center">  
+					<div class="container">
+					  <div class="row">
+
+					               
+							<div class="col-xs-6 col-md-4" style="height:100%; background:orange;">
+							 <div id="content"></div>  
+							          
+				   <div class="code" bgcolor="#c0c0c0">
+							<pre><code>$.ajax({
+							    url: <span>"ajax/example.txt"</span>, <em>// отткель</em>
+							    dataType: <span>"text"</span>,         <em>// формат</em>
+							    success: toTextContainer  <em>// callback</em>
+							});</code></pre>
+							 <button type="button" class="btn btn-success">Run code</button>
+							            
+							<pre><code>$.ajax({
+							    url: <span>"ajax/example.html"</span>, <em>// отткель</em>
+							    dataType: <span>"html"</span>,         <em>// формат</em>
+							    success: toHtmlContainer  <em>// callback</em>
+							});</code></pre>
+							  <button type="button" class="btn btn-success">Run code</button>
+							            
+										<pre><code>$.ajax({
+							    url: <span>"ajax/example.xml"</span>, <em>// отткель</em>
+							    dataType: <span>"xml"</span>,         <em>// формат</em>
+							    success: toXmlContainer  <em>// callback</em>
+							});</code></pre>
+							   <button type="button" class="btn btn-success">Run code</button>
+							            
+										<pre><code>$.ajax({
+							    url: <span>"ajax/example.json"</span>, <em>// отткель</em>
+							    dataType: <span>"json"</span>,         <em>// формат</em>
+							    success: toJsonContainer  <em>// callback</em>
+							});</code></pre>
+							<button type="button" class="btn btn-success">Run code</button>
+					 </div>
+				 </div>
+	
+					 <div class="col-xs-12 col-md-8" style="height:100%; background:gray;">
+						<div class="container">
+							<div align="center" style="width:700px">
+							
+								<article>
+									<h3>Text</h3>
+						            <pre id="text">
+						            </pre>
+									<h3>HTML</h3>
+						            <pre id="html">
+						            </pre>
+									<h3>XML</h3>
+						            <pre id="xml">
+						            </pre>
+									<h3>JSON</h3>
+						            <pre id="json">
+						            </pre>
+		                        </article>	
+		                        <a href="#" title="reload" class="btn btn-default" onclick="window.location.reload();return false">Reload</a>
+		                     </div>
+					   </div>
+
+
+					  </div>
+					</div>
+					</div>
+				</p> 
+		</body>
+		
+	 <footer>
+        <div class="container" >
+            <div class="row">
+                <div class="col-xs-12 col-md-9 text-center" style="height:100%; width:100%; background:grey;">
+                    <p>Vinnytsia National Technical University</p>
+                     <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (097) 195-3100</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">batsandrey@google.com</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted">Copyright &copy; SiteOfGroup 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-1669896-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+	<script type='text/javascript'>
+	(function(){ var widget_id = 'EfGSng87u1';
+	var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+	<!-- {/literal} END JIVOSITE CODE -->
+	
+</html>
