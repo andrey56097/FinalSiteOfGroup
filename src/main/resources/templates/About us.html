@@ -24,6 +24,7 @@
 		  <li><a href="Cathalogs.html">Каталог</a></li>
 		  <li><a href="About us.html">Про нас</a></li>
 		  <li><a href="Contacts.html">Наші контакти</a></li>
+		  <li><a href="API.html">API</a></li>
 		</ol>
 
 				<p align="center">  
@@ -57,7 +58,7 @@
 								<form method="POST" action="/post">
 									<div class="form-group">
 										<label id="lab" for="post-text">Будь-ласка залиште відгук</label>
-										<textarea class="form-control" rows="3" name="text" id="post-text"></textarea>
+										<textarea class="form-control" rows="3" name="text" id="post-text"> </textarea>
 									</div>
 									<button type="submit" class="btn btn-success">Додати</button>
 								</form>
@@ -117,5 +118,14 @@
 	<!-- {/literal} END JIVOSITE CODE -->
 	
     <script>
-    jQuery(document).ready(function(){ jQuery("p").css("color", "red"); }); </script>
+    jQuery(document).ready(function(){ jQuery(" ").css("color", "red"); }); 
+    </script>
+    
+    <script>
+    /*$(".breadcrumb li").click(function(event){ alert("Hello!") }) */
+    $(".breadcrumb").click(function(event){ alert("Are you like to leave from About us ?"); }) 
+    </script>
+    
+  
+    
 </html>
