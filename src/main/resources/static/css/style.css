@@ -118,6 +118,14 @@ h6 {
 	text-align: left;
 }
 
+#f{
+	margin-top: 30px;
+}
+
+.aligncenter input{
+	align: center;
+}
+
 /* this is added features*/
 /*
  .thumbnail:active {
