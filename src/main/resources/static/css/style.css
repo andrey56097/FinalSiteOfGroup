@@ -94,6 +94,30 @@ h6 {
 	width:70%;
 }
 
+.code{
+	margin-top: 0.1em; 
+	margin-bottom: 1em;
+}
+
+.code span{
+	color: green;
+}
+
+.code em{
+	color: grey;
+}
+
+.code pre{
+		background: #AEA3A3;
+		border: 4px double green; 
+		border-radius: 20px;
+		margin-top: 30px;
+}
+
+.container article{
+	text-align: left;
+}
+
 /* this is added features*/
 /*
  .thumbnail:active {
