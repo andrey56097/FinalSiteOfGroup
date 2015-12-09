@@ -50,7 +50,6 @@ public class IndexController {
 	    model.addAttribute("users", usersService.getSubscribeRecommendations());
 	    model.addAttribute("pagesCount", postsPage.getTotalPages());
 	    System.out.println("elements_count:"+postsPage.getNumberOfElements());
-	  
 	    model.addAttribute("currentPage",realPage);
 	    
 	    return "About us";
@@ -92,10 +91,16 @@ public class IndexController {
 	    public String index2() {
 	        return "Cathalogs";
 	    }
+	    
 
 	    @RequestMapping("/Contacts")
 	    public String index3() {
 	        return "Contacts";
+	    }
+	    
+	    @RequestMapping("/API")
+	    public String index4() {
+	        return "API";
 	    }
 } 
 

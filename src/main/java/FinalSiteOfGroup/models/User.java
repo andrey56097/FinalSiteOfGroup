@@ -40,8 +40,6 @@ public class User {
 			this.password = password;
 		}
 
-	  
-	  
 	public User(String login) {
 		this.login = login;
 	}
