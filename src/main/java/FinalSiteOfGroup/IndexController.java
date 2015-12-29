@@ -49,9 +49,8 @@ public class IndexController {
 	    model.addAttribute("posts", postsPage.getContent());
 	    model.addAttribute("users", usersService.getSubscribeRecommendations());
 	    model.addAttribute("pagesCount", postsPage.getTotalPages());
-	    System.out.println("elements_count:"+postsPage.getNumberOfElements());
+	  //  System.out.println("elements_count:"+postsPage.getNumberOfElements());
 	    model.addAttribute("currentPage",realPage);
-	    
 	    return "About us";
 	  }
 
